@@ -1,17 +1,10 @@
-<table  class="table">
-    <thead>
-        <th>Id</th>
-        <th>Kullanıcı adı</th>
-        <th>Şirket</th>
-
-      
-    </thead>
-    <tbody>
-        <tr *ngFor="let customer of customers">
-            <td> {{customer.customerId}} </td>
-            <td> {{customer.userName}} </td>
-            <td> {{customer.companyName}} </td>
-
-        </tr>
-    </tbody>
-</table>
+<ul class="list-group">
+  <li
+    (click)="setCurrentCustomer(customer)"
+   
+    [ngClass]="getCurrentCustomerClass(customer)"
+    *ngFor="let customer of customers"
+  >
+    {{ customer.firstName }} {{ customer.lastname }}
+  </li>
+</ul>

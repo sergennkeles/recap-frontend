@@ -1,4 +1,10 @@
-<table  class="table">
+
+<div *ngIf="dataLoaded == false" class="text-center">
+    <div class="spinner-border text-dark text-center" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div>  
+<table *ngIf="dataLoaded == true" class="table table-hover table-bordered">
     <thead>
         <th>Id</th>
         <th>Marka</th>
@@ -9,13 +15,13 @@
      
     </thead>
     <tbody>
-        <tr *ngFor="let car of cars">
+        <tr routerLink="/car/car-detail/{{car.carId}}" *ngFor="let car of cars">
             <td> {{car.id}}  </td>
             <td> {{car.brandName}} </td>
             <td> {{car.colorName}} </td>
             <td> {{car.modelYear}} </td>
             <td> {{car.dailyPrice}} </td>
-            <td> {{car.desCription}} </td>
+            <td> {{car.description}} </td>
 
         </tr>
     </tbody>

@@ -18,7 +18,7 @@
             <td> {{rental.firstName}} </td>
             <td> {{rental.lastName}} </td>
             <td> {{rental.rentDate}} </td>
-            <td> {{rental.returnDate}} </td>
+            <td>{{(rental.returnDate == null)? "Teslim Alınmadı": rental.returnDate | date:'dd-MM-YYYY'}}</td>
 
 
         </tr>
