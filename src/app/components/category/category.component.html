@@ -66,7 +66,7 @@
         aria-expanded="false"
         aria-controls="collapseThree"
       >
-        Müşteriler
+        Kiralama Durumu
       </button>
     </h2>
     <div
@@ -75,8 +75,22 @@
       aria-labelledby="headingThree"
       data-bs-parent="#accordionExample"
     >
-     <app-customer></app-customer>
+  <ul class="list-group">
+  <li  class="list-group-item cursorPointer active" aria-current="true">Kirada Olan Araçlar</li>
+
+</ul>
+     <div
+      id="collapseThree"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingThree"
+      data-bs-parent="#accordionExample"
+    >
+     <ul class="list-group">
+  <li  class="list-group-item cursorPointer active" aria-current="true">Kirada Olmayan Araçlar</li>
+
+</ul>
      
+    </div>
     </div>
   </div>
 </div>

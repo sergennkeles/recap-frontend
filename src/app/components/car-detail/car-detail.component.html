@@ -8,7 +8,7 @@
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div *ngFor="let image of carDetail.carImages let i = index" [ngClass]="getSliderClassName(i)">
-                <img src="{{imageBasePath}}{{image.imagePath}}" class="d-block w-100" width="800" height="400" alt="...">
+                <img src="{{imageBasePath}}/{{image.imagePath}}" class="d-block w-100" width="800" height="400" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
@@ -23,17 +23,17 @@
        <table class="table">
            <thead>
                <tr>
-                   <th>Araç Kodu</th>
+                   <th>Id</th>
                    <th>Marka</th>
                    <th>Model</th>
                    <th>Renk</th>
-                   <th>Günlük Ücret</th>
+                   <th>Kiralama Ücreti</th>
                    <th>Açıklama</th>
                </tr>
            </thead>
            <tbody>
                <tr>
-                   <td>{{carDetail.car.carId}}</td>
+                   <td>{{carDetail.car.id}}</td>
                    <td>{{carDetail.car.brandName}}</td>
                    <td>{{carDetail.car.modelYear}}</td>
                    <td>{{carDetail.car.colorName}}</td>
