@@ -4,17 +4,30 @@
       <span class="visually-hidden">Loading...</span>
     </div>
 </div>
-
+<div class="search">
+<div class="mb-3">
+  <label for="filterText" class="form-label">Arama yapın</label>
+  <input
+    type="text"
+    [(ngModel)] ="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Renkler arasında ara"
+  />
+  </div>
+  
 <ul *ngIf="dataLoaded == true" class="list-group">
     <li 
     routerLink="/car"
     (click)="removeCurrentColor()"
-    [ngClass]="getAllCurrentColorClass()" aria-current="true">Tümü</li>
+    [ngClass]="getAllCurrentColorClass()"
+     aria-current="true">Tümü</li>
     <li
     (click)="setCurrentColor(color)"
+     [selected]="selectColor(color.colorId)"
     [ngClass]="getCurrentColorClass(color)"
     routerLink="/car/color/{{color.colorId}}"
-    *ngFor="let color of colors">
+    *ngFor="let color of colors | colorFilter:filterText">
     {{color.colorName}}</li>
  
   </ul>

@@ -3,6 +3,17 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
+<div class="search">
+<div class="mb-3">
+  <label for="filterText" class="form-label">Arama yapın</label>
+  <input
+    type="text"
+    [(ngModel)] ="filterText"
+    class="form-control"
+  
+    placeholder="Markalar arasında ara"
+  />
+  </div>
 <ul *ngIf="dataLoaded == true" class="list-group">
   <li 
   routerLink="/car" 
@@ -12,7 +23,10 @@
 
   <li 
   routerLink="/car/brand/{{brand.brandId}}"
-  (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" [ngClass]="getCurrentBrandClass(brand)">
+  (click)="setCurrentBrand(brand)"
+    [selected]="selectBrand(brand.brandId)"
+   *ngFor="let brand of brands | carFilter:filterText"
+    [ngClass]="getCurrentBrandClass(brand)">
     {{brand.brandName}}
   </li>
 </ul>

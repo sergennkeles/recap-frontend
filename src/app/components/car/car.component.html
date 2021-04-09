@@ -4,6 +4,10 @@
         <span class="visually-hidden">Loading...</span>
       </div>
 </div>  
+
+
+  <!--ngModel=two way binding ile iki taraflı bağlantı sağlıyoruz-->
+<app-filter></app-filter>
 <table *ngIf="dataLoaded == true" class="table table-hover table-bordered">
     <thead>
         <th>Id</th>
@@ -12,17 +16,20 @@
         <th>Model Yılı</th>
         <th>Fiyatı</th>
         <th>Açıklama</th>
+     <th></th>
      
     </thead>
     <tbody>
-        <tr routerLink="/car/car-detail/{{car.id}}"  *ngFor="let car of cars">
+        <tr routerLink="/car/car-detail/{{car.id}}"  *ngFor="let car of cars 
+          " >
+        
             <td> {{car.id}}  </td>
-            <td> {{car.brandName}} </td>
-            <td> {{car.colorName}} </td>
+            <td> {{car.brandName  }}  </td>
+            <td> {{car.colorName }}  </td>
             <td> {{car.modelYear}} </td>
             <td> {{car.dailyPrice}} </td>
             <td> {{car.description}} </td>
-
+         <td><button (click)="delete(car)" class="btn btn-danger">Sil</button></td>
         </tr>
     </tbody>
 </table>

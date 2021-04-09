@@ -1,4 +1,3 @@
-
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
@@ -21,14 +20,8 @@
     >
       <div class="accordion-body">
         <ul class="list-group">
-          <li  
-            [class]="getCurrentClass()"
-          
-            routerLinkActive="active"
-            
-          >
-        
-       <app-brand></app-brand>
+          <li [class]="getCurrentClass()" routerLinkActive="active">
+            <app-brand></app-brand>
           </li>
         </ul>
       </div>
@@ -48,12 +41,13 @@
       </button>
     </h2>
     <div
+      [class]="getCurrentClass()"
       id="collapseTwo"
       class="accordion-collapse collapse"
       aria-labelledby="headingTwo"
       data-bs-parent="#accordionExample"
     >
-    <app-color></app-color>
+      <app-color></app-color>
     </div>
   </div>
   <div class="accordion-item">
@@ -75,22 +69,20 @@
       aria-labelledby="headingThree"
       data-bs-parent="#accordionExample"
     >
-  <ul class="list-group">
-  <li  class="list-group-item cursorPointer active" aria-current="true">Kirada Olan Araçlar</li>
-
-</ul>
-     <div
-      id="collapseThree"
-      class="accordion-collapse collapse"
-      aria-labelledby="headingThree"
-      data-bs-parent="#accordionExample"
-    >
-     <ul class="list-group">
-  <li  class="list-group-item cursorPointer active" aria-current="true">Kirada Olmayan Araçlar</li>
-
-</ul>
-     
-    </div>
+      <ul class="list-group">
+        <li class="list-group-item">Kirada Olan Araçlar</li>
+      </ul>
+      <div
+        id="collapseThree"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingThree"
+        data-bs-parent="#accordionExample"
+      >
+        <ul class="list-group">
+          <li class="list-group-item">Kirada Olmayan Araçlar</li>
+        </ul>
+      
+      </div>
     </div>
   </div>
 </div>

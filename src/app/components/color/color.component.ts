@@ -11,6 +11,8 @@ export class ColorComponent implements OnInit {
   colors: Color[] = [];
   currentColor: Color = { colorId: -1, colorName: '' };
   dataLoaded = false;
+  filterText: '';
+  filterColor:number;
   constructor(private colorService: ColorService) {}
 
   ngOnInit(): void {
@@ -44,5 +46,13 @@ export class ColorComponent implements OnInit {
   }
   removeCurrentColor() {
     this.currentColor = { colorId: -1, colorName: '' };
+  }
+
+  selectColor(colorId: number) {
+    if (this.filterColor == colorId) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
