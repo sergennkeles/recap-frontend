@@ -34,4 +34,7 @@ export class CartServiceService {
   cartList(): CartItem[] {
     return CartItems;
   }
+  clearCart() {
+    CartItems.splice(0, CartItems.length);
+  }
 }

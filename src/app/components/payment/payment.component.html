@@ -1,91 +1,96 @@
 <div class="card">
 
-  <div class="card-header text-center">
-    <strong>Ödeme İşlemleri</strong>
-  </div>
+    <div class="card-header text-center">
+        <strong>Ödeme İşlemleri</strong>
+    </div>
 
-  <div class="card-body">
+    <div class="card-body">
 
-    <div class="row">
-
-      <div class="col-6">
-
-        <div class="mb-3">
-          <p>Toplam Tutar : <strong>{{ cartTotal }}</strong> TL </p>
-        </div>
-
-        <form [formGroup]="paymentForm">
-          
-          <div class="mb-3">
-            <label for="firstName">Kart Sahibinin Adı Soyadı</label>
-            <input type="text" class="form-control" id="firstName" formControlName="firstName" />
-          </div>
-
-          <div class="mb-3">
-            <label for="cardNumber">Kart Numarası</label>
-            <input type="text" class="form-control" id="cardNumber" formControlName="cardNumber" placeholder="0000-0000-0000-0000"/>
-          </div>
-
-          <div class="row">
-            <div class="col-6">
-              <div class="mb-3">
-                <label for="expirationDate">Son Kullanma Tarihi</label>
-                <input type="text" class="form-control" id="expirationDate" formControlName="expirationDate" placeholder="03/23" />
-              </div>
-            </div>
+        <div class="row">
 
             <div class="col-6">
-              <div class="mb-3">
-                <label for="cvv">Guvenlik Kodu</label>
-                <input type="number" class="form-control" id="cvv" formControlName="cvv" placeholder="000" />
-              </div>
-            </div>            
-          </div>
-          
-          <div class="row">
-            <div class="col-12">              
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" formControlName="saveCard" id="saveCard">
-                <label class="form-check-label" for="saveCard">
+
+                <div class="mb-3">
+                    <p>Toplam Tutar : <strong>{{ cartTotal }}</strong> TL </p>
+                </div>
+
+                <form [formGroup]="paymentForm">
+
+                    <div class="mb-3">
+                        <label for="firstName">Kart Sahibinin Adı </label>
+                        <input type="text" class="form-control" id="firstName" formControlName="firstName" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="lastName">Kart SahibininSoyadı</label>
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cardNumber">Kart Numarası</label>
+                        <input type="text" class="form-control" id="cardNumber" formControlName="cardNumber" placeholder="0000-0000-0000-0000" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="expirationDate">Son Kullanma Tarihi</label>
+                                <input type="text" class="form-control" id="expirationDate" formControlName="expirationDate" placeholder="03/23" />
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="cvv">Guvenlik Kodu</label>
+                                <input type="text" class="form-control" id="cvv" formControlName="cvv" placeholder="000" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" formControlName="saveCard" id="saveCard">
+                                <label class="form-check-label" for="saveCard">
                   Kart bilgilerimi kaydet
                 </label>
-              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
             </div>
-          </div>
 
-        </form>
+            <div class="col-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Kayıtlı kartlar</strong>
+                    </li>
 
-      </div>
+                    <li *ngFor="let card of cards" class="list-group-item mouse" (click)="setCurrentCard(card)">
+                        Kart No : {{ card.cardNumber }}
+                    </li>
 
-      <div class="col-6">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <strong>Kayıtlı kartlar</strong>
-          </li>
+                    <li *ngIf="cards.length == 0" class="list-group-item">
+                        Kayıtlı kartınız bulunmamaktadır.
+                    </li>
 
-          <li *ngFor="let card of cards" class="list-group-item mouse" (click)="setCurrentCard(card)" >
-           Kart No : {{ card.cardNumber }}
-          </li>
+                </ul>
+            </div>
 
-          <li *ngIf="cards.length == 0" class="list-group-item">
-            Kayıtlı kartınız bulunmamaktadır.
-          </li>
-
-        </ul>
-      </div>
+        </div>
 
     </div>
-    
-  </div>
 
-  <div class="card-footer">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4" style="text-align: center">
-        <button class="btn btn-success" (click)="payment()"> Ödemeyi tamamla </button>
-      </div>
-      <div class="col-4"></div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4" style="text-align: center">
+                <button class="btn btn-success" (click)="payment()"> Ödemeyi tamamla </button>
+            </div>
+            <div class="col-4"></div>
+        </div>
     </div>
-  </div>
 
 </div>

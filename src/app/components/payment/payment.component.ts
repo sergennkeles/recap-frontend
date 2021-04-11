@@ -24,7 +24,6 @@ export class PaymentComponent implements OnInit {
   cartItems: CartItem[] = [];
   cartTotal: number;
   customerId: number;
-  rental: Rental;
   cardId: number = 0;
 
   constructor(
@@ -50,6 +49,7 @@ export class PaymentComponent implements OnInit {
   createPaymentForm() {
     this.paymentForm = this.formBuilder.group({
       firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       cardNumber: ['', Validators.required],
       expirationDate: ['', Validators.required],
       cvv: ['', Validators.required],
@@ -60,6 +60,7 @@ export class PaymentComponent implements OnInit {
   setCurrentCard(card: CreditCard) {
     this.paymentForm.setValue({
       firstName: card.firstName,
+      lastName:card.lastName,
       cardNumber: card.cardNumber,
       expirationDate: card.expirationDate,
       cvv: card.cvv,
@@ -69,32 +70,28 @@ export class PaymentComponent implements OnInit {
   }
 
   payment() {
-    if (this.paymentForm.valid) {
-      let paymentModel = Object.assign({}, this.paymentForm.value);
-      paymentModel.customerId = this.customerId;
-      paymentModel.total = this.cartTotal;
-      paymentModel.cardId = this.cardId;
-      this.paymentService.payment(paymentModel).subscribe(
-        (response) => {
-          this.cartItems.map((rent) => {
-            rent.returnDate = undefined;
-            this.rentalService.add(rent).subscribe();
-        
-          });
-
-          if (paymentModel.saveCard) {
-            this.paymentService.savecard(paymentModel).subscribe();
-          }
-
-          this.toastrService.success(response.message, 'Ödeme');
-        },
-        (responseError) => {
-          console.log(responseError);
-
-          this.toastrService.error('Ödeme alınamadı', 'Hata');
-        }
-      );
-    }
+   if (this.paymentForm.valid) {
+     let paymentModel = Object.assign({}, this.paymentForm.value);
+     paymentModel.customerId = this.customerId;
+     paymentModel.total = this.cartTotal;
+     paymentModel.cardId = this.cardId;
+     this.paymentService.payment(paymentModel).subscribe(
+       (response) => {
+         if (paymentModel.saveCard) {
+              
+           this.paymentService.savecard(paymentModel).subscribe();
+         }
+         this.cartItems.map((rent) => {
+           this.rentalService.add(rent).subscribe();
+         });
+         this.toastrService.success(response.message, 'Ödeme');
+         this.cartService.clearCart();
+       },
+       (responseError) => {
+         this.toastrService.error('Ödeme alınamadı', 'Hata');
+       }
+     );
+   }
   }
 
   getCardList() {

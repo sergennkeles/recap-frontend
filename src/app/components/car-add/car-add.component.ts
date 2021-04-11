@@ -66,7 +66,7 @@ export class CarAddComponent implements OnInit {
       this.carService.addCar(carModel).subscribe(
         (data) => {
           this.toastrService.success(data.message, 'Başarılı');
-          console.log(data);
+     
         },
         (responseError) => {
           console.log(responseError.error);

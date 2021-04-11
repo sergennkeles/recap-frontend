@@ -10,7 +10,7 @@
         <div class="form-group">
 
           <select id="customerId" class="form-select"  formControlName="customerId">
-            <option [ngValue]="customer.id" *ngFor="let customer of customers">{{ customer.firstName }} {{ customer.lastName }}</option>
+            <option [ngValue]="customer.id" *ngFor="let customer of customers" >{{ customer.firstName }} {{ customer.lastName }}</option>
           </select>
 
         </div>
