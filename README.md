@@ -1,11 +1,17 @@
 # RecapFrontend
 
 
-![1](https://user-images.githubusercontent.com/65495192/111390151-4dfb6d80-86c3-11eb-8e6e-866c40fabc7c.PNG)
-![2](https://user-images.githubusercontent.com/65495192/111390166-55bb1200-86c3-11eb-86b7-1b72e53ab867.jpg)
-![6](https://user-images.githubusercontent.com/65495192/111390183-5c498980-86c3-11eb-9d41-d5aea6beea28.PNG)
-![3](https://user-images.githubusercontent.com/65495192/111390185-5d7ab680-86c3-11eb-9726-9b0d6080abe3.jpg)
-![4](https://user-images.githubusercontent.com/65495192/111390187-5e134d00-86c3-11eb-9f89-f71923f5acaf.PNG)
+![1](https://user-images.githubusercontent.com/65495192/114321163-fc0f0180-9b21-11eb-94ec-9c368d473210.PNG)
+![2](https://user-images.githubusercontent.com/65495192/114321156-f3b6c680-9b21-11eb-9ca3-1a97ea7f24ed.PNG)
+![3](https://user-images.githubusercontent.com/65495192/114321162-fb766b00-9b21-11eb-9305-0c2c3ccc9d6a.PNG)
+![4](https://user-images.githubusercontent.com/65495192/114321166-03cea600-9b22-11eb-8625-9913084bfb75.PNG)
+![5](https://user-images.githubusercontent.com/65495192/114321167-04673c80-9b22-11eb-9cfc-feee6c003bb9.PNG)
+![6](https://user-images.githubusercontent.com/65495192/114321168-04ffd300-9b22-11eb-9291-5ac996cce09e.PNG)
+![7](https://user-images.githubusercontent.com/65495192/114321169-05986980-9b22-11eb-998a-7fe80d9d5527.PNG)
+![8](https://user-images.githubusercontent.com/65495192/114321170-06310000-9b22-11eb-9ec3-42b3db98e8d1.PNG)
+![9](https://user-images.githubusercontent.com/65495192/114321172-0a5d1d80-9b22-11eb-83e6-828432b95d47.PNG)
+![10](https://user-images.githubusercontent.com/65495192/114321173-0b8e4a80-9b22-11eb-9ef1-e2f9b919ffd4.PNG)
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
